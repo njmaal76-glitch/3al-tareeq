@@ -1,9 +1,7 @@
-name: Flutter Build APK
+ name: Flutter Build APK
 
 on:
   push:
-    branches: [ "main", "master" ]
-  pull_request:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
@@ -28,9 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Recreate Android Project Files
-        run: flutter create . --platforms android
 
       - name: Build APK
         run: flutter build apk --release
